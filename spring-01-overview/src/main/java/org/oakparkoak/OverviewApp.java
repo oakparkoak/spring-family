@@ -7,9 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @package: org.oakparkoak
- * @author: Elijah Du
+ * @author: Captain
  * @time: 2/2/2021 12:56 PM
- * @description: demo for springboot initializer
  */
 @RestController
 @SpringBootApplication

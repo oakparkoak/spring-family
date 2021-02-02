@@ -12,7 +12,7 @@
     <artifactId>spring-02-jdbc</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>spring02-jdbc01-datasource-xml</module>
+        <module>spring02-jdbc01-datasource-simple</module>
         <module>spring02-jdbc02-datasource-config</module>
         <module>spring02-jdbc03-datasource-druid</module>
         <module>spring02-jdbc04-datasource-multi</module>
