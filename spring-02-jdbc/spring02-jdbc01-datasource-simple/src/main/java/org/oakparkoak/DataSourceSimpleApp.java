@@ -22,7 +22,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @Configuration
 @EnableTransactionManagement
-public class SimpleApp {
+public class DataSourceSimpleApp {
     @Autowired
     private DataSource dataSource;
 
@@ -34,7 +34,7 @@ public class SimpleApp {
     private static void print(ApplicationContext context) throws SQLException {
         System.out.println("Beans: "+Arrays.toString(context.getBeanDefinitionNames()));
 
-        SimpleApp demo = context.getBean("simpleApp", SimpleApp.class);
+        DataSourceSimpleApp demo = context.getBean("DataSourceSimpleApp", DataSourceSimpleApp.class);
         demo.printDb();
     }
 

@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    hikari:
+      maximumPoolSize: 6
+  output:
+    ansi:
+      enabled: ALWAYS

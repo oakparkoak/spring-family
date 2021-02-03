@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-    <parent>
-        <artifactId>spring-family</artifactId>
-        <groupId>org.oakparkoak</groupId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.oakparkoak</groupId>
+    <version>1.0-SNAPSHOT</version>
+    <artifactId>spring01-overview02-without-parent</artifactId>
 
-    <artifactId>spring-01-overview</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
 
 	<dependencyManagement>
 		<dependencies>
@@ -22,7 +25,8 @@
 		</dependencies>
 	</dependencyManagement>
 
-	<build>
+    <!--repackage: no main manifest attribute, in spring01-overview02-without-parent-1.0-SNAPSHOT.jar -->
+    <build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

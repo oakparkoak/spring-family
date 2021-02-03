@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @SpringBootApplication
-public class OverviewApp {
+public class OverviewHelloworldApp {
     public static void main(String[] args) {
-        SpringApplication.run(OverviewApp.class, args);
+        SpringApplication.run(OverviewHelloworldApp.class, args);
     }
 
     @RequestMapping("/overview")
