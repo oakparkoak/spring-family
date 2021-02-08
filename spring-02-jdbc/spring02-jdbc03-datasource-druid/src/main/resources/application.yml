@@ -1,0 +1,40 @@
+# java -cp druid-1.1.13.jar com.alibaba.druid.filter.config.ConfigTools 123 > decrypt.txt
+public-key: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAJGV+q5sObyZxKHHXvHMgCigjsAyjOnmc1YY3JKL0qU8QwF7rFDnnlekfgj2no7upnjzlFcDGNLJXu2Mbi8fMjkCAwEAAQ==
+spring:
+  datasource:
+    url: jdbc:h2:mem:foo
+    username: sa
+    password: RrCy3bLBGe1O063HGEjd/A8lRDA8HfybYfdP0sRiXKcexGMGSanmOfNf/0S1wUs5cC3S09WhWfiQcTb56JN43A==
+    druid:
+      initialSize: 5
+      minIdle: 5
+      maxActive: 20
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 2000
+      removeAbandoned: true
+      removeAbandonedTimeout: 1800
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      connectionProperties: config.decrypt=true;config.decrypt.key=${public-key};druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 50
+      filters: config,stat,slf4j,print
+      web-stat-filter:
+        enabled: true
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+      stat-view-servlet:
+        enabled: true
+        reset-enable: false
+        # http://localhost:8080/druid/
+        url-pattern: /druid/*
+        login-username: admin
+        login-password: admin
+      filter:
+        slf4j:
+          enabled: true
+          statement-create-after-log-enabled: false
+          statement-close-after-log-enabled: false
+          result-set-open-after-log-enabled: false
+          result-set-close-after-log-enabled: false
