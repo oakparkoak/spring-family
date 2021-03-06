@@ -1,1 +1,1 @@
-INSERT INTO FOO (BAR) VALUES ('aaa');
+insert into FOO (NAME) values ('name-1');
