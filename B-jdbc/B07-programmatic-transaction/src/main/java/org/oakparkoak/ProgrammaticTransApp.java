@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.support.TransactionCallback;
 import org.springframework.transaction.support.TransactionCallbackWithoutResult;
 import org.springframework.transaction.support.TransactionTemplate;
 
@@ -38,6 +39,17 @@ public class ProgrammaticTransApp implements CommandLineRunner {
             }
         });
         count();
+
+        //noinspection Convert2Lambda
+        String name = trans.execute(new TransactionCallback<String>() {
+            @Override
+            public String doInTransaction(TransactionStatus transactionStatus) {
+                jdbc.execute("insert into FOO (NAME) values ('name-1')");
+                return jdbc.queryForObject("select NAME from FOO", String.class);
+            }
+        });
+        count();
+        System.out.println(name);
     }
 
     private void count() {
