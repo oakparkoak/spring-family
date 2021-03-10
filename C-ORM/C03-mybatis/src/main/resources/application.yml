@@ -1,0 +1,8 @@
+spring:
+  h2:
+    console:
+      enabled: true
+mybatis:
+  type-handlers-package: org.oakparkoak.handler
+  configuration:
+    map-underscore-to-camel-case: true
