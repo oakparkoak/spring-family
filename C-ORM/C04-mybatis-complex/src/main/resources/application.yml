@@ -1,0 +1,16 @@
+spring:
+  h2:
+    console:
+      enabled: true
+mybatis:
+  type-handlers-package: org.oakparkoak.handler
+  mapper-locations: classpath*:/mapper/**/*.xml
+  type-aliases-package: org.oakparkoak.model
+  configuration:
+    map-underscore-to-camel-case: true
+
+pagehelper:
+  offset-as-page-num: true
+  reasonable: true
+  page-size-zero: true
+  support-methods-arguments: true
